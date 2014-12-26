@@ -1,29 +1,7 @@
 from pandas import DataFrame, Series
 
-#################
-# Syntax Reminder:
-#
-# The following code would create a two-column pandas DataFrame
-# named df with columns labeled 'name' and 'age':
-#
-# people = ['Sarah', 'Mike', 'Chrisna']
-# ages  =  [28, 32, 25]
-# df = DataFrame({'name' : Series(people),'age'  : Series(ages)})
 
 def create_dataframe():
-    '''
-    Create a pandas dataframe called 'olympic_medal_counts_df' containing
-    the data from the table of 2014 Sochi winter olympics medal counts.  
-
-    The columns for this dataframe should be called 
-    'country_name', 'gold', 'silver', and 'bronze'.  
-
-    There is no need to  specify row indexes for this dataframe 
-    (in this case, the rows will automatically be assigned numbered indexes).
-    
-    You do not need to call the function in your code when running it in the
-    browser - the grader will do that automatically when you submit or test it.
-    '''
 
     countries = ['Russian Fed.', 'Norway', 'Canada', 'United States',
                  'Netherlands', 'Germany', 'Switzerland', 'Belarus',
@@ -40,4 +18,4 @@ def create_dataframe():
                                          'gold':Series(gold), 'silver':Series(silver),
                                          'bronze':Series(bronze)})
 
-    return olympic_medal_counts_df[0:3]
+    return olympic_medal_counts_df
