@@ -45,4 +45,9 @@ avg_medal_count = olympic_medal_counts_df[['gold','silver','bronze']][olympic_me
 # Interpretation: indicates the average number of gold, silver, and bronze medals earned amongst countries who earned 
 # at least one medal of any kind at the 2014 Sochi olympics
 
-olympic_points_df =  olympic_medal_counts_df['country_name','points']
+points = np.dot(olympic_medal_counts_df[['gold','silver','bronze']],[4,2,1])
+# Interpretation: Contains the points that each country earned during the games
+
+olympic_points_df =  DataFrame({'country_name':Series(countries), 'points':points})
+# Interpretation: This dataframe has the countries and the total points earned during the olympics
+print olympic_points_df
