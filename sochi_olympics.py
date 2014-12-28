@@ -3,7 +3,7 @@
 ## Start Date: 12/24/2014
 ## End Date: 
 ## Author: Amandeep Sharma
-## References: Udacity.com, pandas 0.15.2 documentation,
+## References: U****.com, pandas 0.15.2 documentation,
 ##			   numpy 1.9 documentation
 ##########################################################
 
