@@ -1,6 +1,6 @@
 ##########################################################
-## Aim: Program to analyze data from sochi olympics
-## Start Date: 12/4/2014
+## Aim: Program to analyze data from 2014 Sochi olympics
+## Start Date: 12/24/2014
 ## End Date: 
 ## Author: Amandeep Sharma
 ## References: Udacity.com, pandas 0.15.2 documentation,
@@ -35,15 +35,14 @@ bronze = [9, 10, 5, 12, 9, 5, 2, 1, 5, 7, 1, 2, 2, 6, 2, 4, 3, 1, 2, 1, 0, 6, 2,
 olympic_medal_counts_df = DataFrame({'country_name':Series(countries),
                                          'gold':Series(gold), 'silver':Series(silver),
                                          'bronze':Series(bronze)})
-
 # Interpretation: Contains the dataframe having countries, gold, silver and bronze as its parameters										 
-#***print olympic_medal_counts_df[['country_name', 'gold', 'silver', 'bronze']]
 
 avg_bronze_at_least_one_gold = np.average(olympic_medal_counts_df['bronze'], weights = (olympic_medal_counts_df['gold']>0))
-#***print avg_bronze_at_least_one_gold
 # Interpretation: The data frame will contain the average bronze of all the countries with at least one gold
 
-avg_medal_count = 
-
+avg_medal_count = olympic_medal_counts_df[['gold','silver','bronze']][olympic_medal_counts_df['gold'] + \
+					olympic_medal_counts_df['silver'] + olympic_medal_counts_df['bronze'] > 0].apply(np.mean)
 # Interpretation: indicates the average number of gold, silver, and bronze medals earned amongst countries who earned 
 # at least one medal of any kind at the 2014 Sochi olympics
+
+olympic_points_df =  olympic_medal_counts_df['country_name','points']
