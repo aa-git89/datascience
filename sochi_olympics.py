@@ -1,21 +1,49 @@
+##########################################################
+## Aim: Program to analyze data from sochi olympics
+## Start Date: 12/4/2014
+## End Date: 
+## Author: Amandeep Sharma
+## References: Udacity.com, pandas 0.15.2 documentation,
+##			   numpy 1.9 documentation
+##########################################################
+
 from pandas import DataFrame, Series
+import pandas as pd
+import numpy as np
 
+###################################
+## Data definition
+###################################
 
-def create_dataframe():
-
-    countries = ['Russian Fed.', 'Norway', 'Canada', 'United States',
+countries = ['Russian Fed.', 'Norway', 'Canada', 'United States',
                  'Netherlands', 'Germany', 'Switzerland', 'Belarus',
                  'Austria', 'France', 'Poland', 'China', 'Korea', 
                  'Sweden', 'Czech Republic', 'Slovenia', 'Japan',
                  'Finland', 'Great Britain', 'Ukraine', 'Slovakia',
                  'Italy', 'Latvia', 'Australia', 'Croatia', 'Kazakhstan']
+# Interpretation: countries is a list that consists of all the countries that were involved in sochi olympics
 
-    gold = [13, 11, 10, 9, 8, 8, 6, 5, 4, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
-    silver = [11, 5, 10, 7, 7, 6, 3, 0, 8, 4, 1, 4, 3, 7, 4, 2, 4, 3, 1, 0, 0, 2, 2, 2, 1, 0]
-    bronze = [9, 10, 5, 12, 9, 5, 2, 1, 5, 7, 1, 2, 2, 6, 2, 4, 3, 1, 2, 1, 0, 6, 2, 1, 0, 1]
+gold = [13, 11, 10, 9, 8, 8, 6, 5, 4, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+# Interpretation: gold is a list of gold medals in for various countries which in the order of the countries list
 
-    olympic_medal_counts_df = DataFrame({'country_name':Series(countries),
+silver = [11, 5, 10, 7, 7, 6, 3, 0, 8, 4, 1, 4, 3, 7, 4, 2, 4, 3, 1, 0, 0, 2, 2, 2, 1, 0]
+# Interpretation: silver is a list of silver medals in for various countries which in the order of the countries list
+
+bronze = [9, 10, 5, 12, 9, 5, 2, 1, 5, 7, 1, 2, 2, 6, 2, 4, 3, 1, 2, 1, 0, 6, 2, 1, 0, 1]
+# Interpretation: bronze is a list of bronze medals in for various countries which in the order of the countries list
+
+olympic_medal_counts_df = DataFrame({'country_name':Series(countries),
                                          'gold':Series(gold), 'silver':Series(silver),
                                          'bronze':Series(bronze)})
 
-    return olympic_medal_counts_df
+# Interpretation: Contains the dataframe having countries, gold, silver and bronze as its parameters										 
+#***print olympic_medal_counts_df[['country_name', 'gold', 'silver', 'bronze']]
+
+avg_bronze_at_least_one_gold = np.average(olympic_medal_counts_df['bronze'], weights = (olympic_medal_counts_df['gold']>0))
+#***print avg_bronze_at_least_one_gold
+# Interpretation: The data frame will contain the average bronze of all the countries with at least one gold
+
+avg_medal_count = 
+
+# Interpretation: indicates the average number of gold, silver, and bronze medals earned amongst countries who earned 
+# at least one medal of any kind at the 2014 Sochi olympics
