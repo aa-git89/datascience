@@ -20,10 +20,8 @@ predictions = {}
 #				  0 for not survived and 1 survived
 
 df = pd.read_csv(titanic_data)
-#print df.Sex
 for passenger_index, passenger in df.iterrows():
 	if(passenger.Sex == 'male'):
-		# print 'Enter if loop'
 		predictions[passenger.PassengerId] = 0
 	else:
 		predictions[passenger.PassengerId] = 1
