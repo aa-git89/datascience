@@ -1,11 +1,10 @@
-##########################################################
-## Aim: Program to analyze data from 2014 Sochi olympics
-## Start Date: 12/24/2014
-## End Date: 
+##########################################################################
+## Aim: Program to perform basic stats on 2014 sochi olympics medal count
+## Date: 12/24/2014
 ## Author: Amandeep Sharma
 ## References: U****.com, pandas 0.15.2 documentation,
 ##			   numpy 1.9 documentation
-##########################################################
+##########################################################################
 
 from pandas import DataFrame, Series
 import pandas as pd
@@ -48,6 +47,6 @@ avg_medal_count = olympic_medal_counts_df[['gold','silver','bronze']][olympic_me
 points = np.dot(olympic_medal_counts_df[['gold','silver','bronze']],[4,2,1])
 # Interpretation: Contains the points that each country earned during the games
 
-olympic_points_df =  DataFrame({'country_name':Series(countries), 'points':points})
+olympic_points_df =  DataFrame({'country_name':Series(countries), 'points':Series(points)})
 # Interpretation: This dataframe has the countries and the total points earned during the olympics
 print olympic_points_df
