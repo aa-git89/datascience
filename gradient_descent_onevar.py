@@ -1,10 +1,11 @@
-###############################################################################
-## Aim: Program to perform gradient descent using one variable on housing data
-## Date: 12/24/2014
-## Author: Amandeep Sharma
-## References: U****.com, pandas 0.15.2 documentation,
-##			   numpy 1.9 documentation
-##############################################################################
+#################################################################################
+## Aim: Program to perform gradient descent using one variable on housing data	#
+##		in this case the predictor is number of rooms							#
+## Date: 01/14/2015																#
+## Author: Amandeep Sharma														#
+## References: U****.com, pandas 0.15.2 documentation,							#	
+##			   numpy 1.9 documentation											#
+#################################################################################
 
 # data set is present in this link: https://archive.ics.uci.edu/ml/machine-learning-databases/housing/housing.data
 
@@ -16,8 +17,7 @@ import pandas
 ## Data definition
 ########################################
 
-housing_data = "C:/Python27/incoming/Intro-DataSc/Housing_Prices.csv" #Interpretation: housing_data is an 
-#variable that holds the csv file used for prediction
+housing_data = "Housing_Prices.csv" #Interpretation: housing_data is an variable that holds the csv file used for prediction
 housing_df = pandas.read_csv(housing_data) #Interpretation: housing_df is a DataFrame which stores all 
 #columns of housing data
 values_ini = housing_df['MEDV'] #Interpretation: values_ini stores the actual value of the house as a Series
