@@ -8,6 +8,7 @@
 #################################################################################
 
 # data set is present in this link: https://archive.ics.uci.edu/ml/machine-learning-databases/housing/housing.data
+# data set used is also present in my data folder under the name Housing_Prices
 
 # importing all the required packages
 import numpy
