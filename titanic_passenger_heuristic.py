@@ -6,6 +6,9 @@
 ## References: U****.com, pandas 0.15.2 documentation,
 ##			   numpy 1.9 documentation
 ##########################################################################
+
+# data set used is also present in my data folder under the name titanic_data
+
 import pandas as pd
 import numpy as np
 #import statsmodels.api as sm
@@ -17,7 +20,7 @@ sex_status_u18_predicted = 0
 # Interpretation: Holds the number of correctly guessed survival rate based on sex or high class ticket and under 18 heuristic used
 complex_predicted = 0
 # Interpretation: Holds the number of correctly guessed survival rate based on complex heuristic used
-titanic_data = "C:/Python27/incoming/Intro-DataSc/titanic_data.csv"
+titanic_data = "=titanic_data.csv"
 # Interpretation: Holds the entire titanic dataset
 predictions = {}
 # Interpretation: This dictionary will hold the final heuristic in the form of passenger_id and values
