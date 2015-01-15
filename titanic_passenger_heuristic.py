@@ -35,7 +35,6 @@ def sex_heuristic(passenger):
 		predictions[passenger.PassengerId] = 1
 
 # correct_sex_heuristic_prediction: DataFrame -> Void
-# Input: Passenger DataFrame, it has all the information of Titanic passengers
 # Returns: Increments the correct predictions if sex_heuristic predicts the actual outcome 
 def correct_sex_heuristic_prediction(passenger):
 	global sex_heu_predicted
