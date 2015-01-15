@@ -30,7 +30,6 @@ predictors_ini = housing_df[['one', 'RM']] #Interpretation: predictors_ini is a 
 theta = numpy.zeros(len(predictors_ini.columns)) #Interpretation: theta holds the initial value of theta
 predictors = numpy.array(predictors_ini) #Interpretation: predictors stores the predictors in array format
 values = numpy.array(values_ini) #Interpretation: values stores the actual values in array format
-#theta = [5,1]
 alpha = 0.04 #Interpretation: alpha stores the learning rate
 num_iterations = 100000 #Interpretation: num_iterations stores the number of iterations given for convergence
 
