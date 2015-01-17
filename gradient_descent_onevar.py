@@ -33,6 +33,10 @@ values = numpy.array(values_ini) #Interpretation: values stores the actual value
 alpha = 0.04 #Interpretation: alpha stores the learning rate
 num_iterations = 100000 #Interpretation: num_iterations stores the number of iterations given for convergence
 
+########################################
+## Function definition
+########################################
+
 #compute_cost: Array, Array, Array -> Float
 #Input: Predictor is a feature used to perform regression, values is the actual value of house, theta is the
 #theta value

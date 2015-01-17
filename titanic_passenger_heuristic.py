@@ -14,6 +14,10 @@ import numpy as np
 #import statsmodels.api as sm
 import os
 
+########################################
+## Data definition
+########################################
+
 sex_heu_predicted = 0
 # Interpretation: Holds the number of correctly guessed survival rate based on sex heuristic used
 sex_status_u18_predicted = 0
@@ -26,6 +30,10 @@ predictions = {}
 # Interpretation: This dictionary will hold the final heuristic in the form of passenger_id and values
 #				  0 for not survived and 1 survived
 df = pd.read_csv(titanic_data)
+
+########################################
+## Function definition
+########################################
 
 # sex_heuristic: DataFrame -> Void
 # Input: Passenger DataFrame, it has all the information of Titanic passengers
