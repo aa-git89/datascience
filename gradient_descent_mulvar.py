@@ -19,7 +19,7 @@ import pandas
 ## Data definition
 ########################################
 
-housing_data = "Housing_Prices.csv" 
+housing_data = "C:/Users/Amandeep/Documents/GitHub/datascience/data/Housing_Prices.csv" 
 #Interpretation: housing_data is an variable that holds the csv file used for prediction
 housing_df = pandas.read_csv(housing_data) #Interpretation: housing_df is a DataFrame which stores all 
 #columns of housing data
@@ -27,9 +27,9 @@ values_ini = housing_df['MEDV'] #Interpretation: values_ini stores the actual va
 m = len(values_ini) * 1.0 #Interpretation: m holds the number of training set
 housing_df['one'] = numpy.ones(m) #Adding a column to the DataFrame which will hold value one in all rows, 
 #this is for the y intercept
-predictors_ini = housing_df[['RAD','PRATIO','TAX','B','LSTAT','DIS','CRIM','AGE','RM']] 
+predictors_ini = housing_df[['CHAS','RAD','PRATIO','TAX','B','LSTAT','DIS','CRIM','AGE','RM']] 
 #Interpretation: predictors_ini is a DataFrame that holds the predictors in this case the a list of different variables 
-#in order distance from highway, ratio of teachers, tax, blacks, low status class,crime rate, age, rooms	
+#in order: charles river dummy, distance from highway, ratio of teachers, tax, blacks, low status class,crime rate, age, rooms	
 values = numpy.array(values_ini) #Interpretation: values stores the actual values in array format
 alpha = 0.04 #Interpretation: alpha stores the learning rate
 num_iterations = 100000 #Interpretation: num_iterations stores the number of iterations given for convergence
