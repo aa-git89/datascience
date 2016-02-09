@@ -14,7 +14,7 @@ class SListener(StreamListener):
 
     def on_data(self, data):
 
-        if  'in_reply_to_status' in data:
+        if  'in_reply_to_status_id' in data:
             self.on_status(data)
         elif 'delete' in data:
             delete = json.loads(data)['delete']['status']
