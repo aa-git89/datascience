@@ -1,0 +1,10 @@
+a	00001740	0.125	0	able#1	(usually followed by `to') having the necessary means or skill or know-how or authority to do something; "able to swim"; "she was able to program her computer"; "we were at last able to buy a car"; "able to get a grant for the project"
+a	00002098	0	0.75	unable#1	(usually followed by `to') not having the necessary means or skill or know-how; "unable to get to town without a car"; "unable to obtain funds"
+a	00002312	0	0	dorsal#2 abaxial#1	facing away from the axis of an organ or organism; "the abaxial surface of a leaf is the underside or side facing away from the stem"
+a	00002527	0	0	ventral#2 adaxial#1	nearest to or facing toward the axis of an organ or organism; "the upper side of a leaf is known as the adaxial surface"
+a	00002730	0	0	acroscopic#1	facing or on the side toward the apex
+a	00002843	0	0	basiscopic#1	facing or on the side toward the base
+a	00002956	0	0	abducting#1 abducent#1	especially of muscles; drawing away from the midline of the body or from an adjacent part
+a	00003131	0	0	adductive#1 adducting#1 adducent#1	especially of muscles; bringing together or drawing toward the midline of the body or toward an adjacent part
+a	00003356	0	0	nascent#1	being born or beginning; "the nascent chicks"; "a nascent insurgency"
+a	00003553	0	0	emerging#2 emergent#2	coming into existence; "an emergent republic"
