@@ -21,6 +21,7 @@ pos_file_path = "input positive tweet training text file"
 neg_file_path = "inputs negative tweet training text file"
 test_file_path = "input testing data file"
 stp_wrd = "file having all the stop words"
+train_num = 400.00
 # List containing the politician which should be removed from the tweet
 key_word = [r'\b[Tt]rump\b',r'\b[Dd]onald\b',r'\b[Cc]linton\b',r'\b[Hh]illary\b',r'\b[Cc]ruz\b',\
             r'\b[Tt]ed\b',r'\b[Rr]ubio\b',r'\b[Mm]arco\b']
@@ -181,10 +182,10 @@ def senti_word_probability(senti_file_path, corpus,sent_ty, opo_sent_ty):
                 else:
                     pass
             try:
-                word_dict[word][sent_ty+'Prob'] = round(occur_cnt/400.0,3)
+                word_dict[word][sent_ty+'Prob'] = round(occur_cnt/train_num, 3)
             except KeyError:
                 word_dict[word] = {}
-                word_dict[word][sent_ty+'Prob'] = round(occur_cnt/400.0,3)
+                word_dict[word][sent_ty+'Prob'] = round(occur_cnt/train_num, 3)
                 word_dict[word]['PosScore'] = 0.5
                 word_dict[word]['NegScore'] = 0.5
             try:
