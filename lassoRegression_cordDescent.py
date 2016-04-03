@@ -69,7 +69,7 @@ def lasso_cyclical_coordinate_descent(feature_matrix, output, initial_weights, l
             initial_weights[i] = lasso_coordinate_descent_step(i, feature_matrix, output, initial_weights, l1_penalty)
             change[i] = old_weight - initial_weights[i]
         print "Change", change
-        if np.max(change) < tolerance:
+        if np.max(abs(change)) < tolerance:
             repeat = False
     return initial_weights
       #   so you don't lose it
