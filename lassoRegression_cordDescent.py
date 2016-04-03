@@ -79,7 +79,6 @@ def lasso_cyclical_coordinate_descent(feature_matrix, output, initial_weights, l
       # check to see if the maximum weight change
       #    is less than the tolerance
       #    if so, exit the loop
-    return the_updated_weights
 
 simple_features = ['sqft_living', 'bedrooms']
 my_output= sales['price']
