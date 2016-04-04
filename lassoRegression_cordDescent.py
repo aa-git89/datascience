@@ -29,7 +29,7 @@ def predict_outcome(feature_matrix, weights):
 
 def normalize_features(features):
     norms_lst = []
-    for i in range(0, np.shape(features)[1] - 1):
+    for i in range(0, np.shape(features)[1] -1):
         X = features[:,i + 1]
         norms = np.linalg.norm(X, axis=0)
         X_normalized = X / norms
@@ -39,17 +39,21 @@ def normalize_features(features):
 
 def lasso_coordinate_descent_step(i, feature_matrix, output, weights, l1_penalty):
     # compute prediction
-    ro = [0] * feature_matrix.shape[1]
+    #ro = 0
     prediction = predict_outcome(feature_matrix, weights)
+    #print "op and pred", output ,prediction
     # compute ro[i] = SUM[ [feature_i]*(output - prediction + weight[i]*[feature_i]) ]
     #for i in range(0, np.shape(feature_matrix)[i] - 1):
-    ro[i] = sum(feature_matrix[:, i]*(output - prediction + weights[i]*feature_matrix[:, i]))
+    ro = sum( feature_matrix[:, i] * (output - prediction + weights[i]*feature_matrix[:, i]) )
+    print "printing ro", ro, "lambda", l1_penalty/2
     if i == 0: # intercept -- do not regularize
-        weights[i] = ro[i]
-    elif ro[i] < -l1_penalty/2.:
-        weights[i] = (ro[i] + l1_penalty/2)
-    elif ro[i] > l1_penalty/2.:
-        weights[i] = (ro[i] - l1_penalty/2)
+        weights[i] = ro
+    elif ro < -l1_penalty/2.:
+        print "increaing ro"
+        weights[i] = ro + l1_penalty/2.
+    elif ro > l1_penalty/2.:
+        print "decreasig ro"
+        weights[i] = ro - l1_penalty/2.
     else:
         weights[i] = 0.
 
@@ -67,9 +71,11 @@ def lasso_cyclical_coordinate_descent(feature_matrix, output, initial_weights, l
     # store the value of the old weight
             old_weight = initial_weights[i]
             initial_weights[i] = lasso_coordinate_descent_step(i, feature_matrix, output, initial_weights, l1_penalty)
-            change[i] = old_weight - initial_weights[i]
-        print "Change", change
+            change[i] =  old_weight - initial_weights[i]
+            #print "Change", change
+
         if np.max(change) < tolerance:
+            print "Entering if"
             repeat = False
     return initial_weights
       #   so you don't lose it
@@ -81,13 +87,15 @@ def lasso_cyclical_coordinate_descent(feature_matrix, output, initial_weights, l
       #    if so, exit the loop
 
 simple_features = ['sqft_living', 'bedrooms']
+#simple_features = ['sqft_living']
 my_output= sales['price']
 (simple_feature_matrix, output) = get_numpy_data(sales, simple_features, my_output)
 #print simple_feature_matrix[:,1]
 #print simple_feature_matrix
 norms_features, norms_lst = normalize_features(simple_feature_matrix)
 #print norms_features, norms_lst
-initial_weights = np.array([0.0,0.0,0.0])
+#initial_weights = np.array([0.0,0.0,0.0])
+initial_weights = np.array([0., 0., 0.])
 l1_penalty = 1e7
 tolerance = 1.0
 
@@ -96,6 +104,9 @@ print fin_weights
 #fm = predict_outcome(norms_features, initial_weights)
 #print fm
 
+#sales["predict"] = model.predict(sales[['norm_sqft_living', 'norm_bedrooms']])
+#rss = sum((sales["price"] - sales["predict"])**2)
+#print rss
 # should print 0.425558846691
 #import math
 #print lasso_coordinate_descent_step(1, np.array([[3./math.sqrt(13),1./math.sqrt(10)],
