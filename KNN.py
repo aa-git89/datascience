@@ -50,9 +50,9 @@ feature_list = ['bedrooms',
                 'sqft_living15',
                 'sqft_lot15']
 
-features_train, output_train = get_numpy_data(df_housePrice_train, feature_list, 'price')
-features_test, output_test = get_numpy_data(df_housePrice_test, feature_list, 'price')
-features_valid, output_valid = get_numpy_data(df_housePrice_valid, feature_list, 'price')
+features_train, output_train = get_numpy_data(df_housePrice_train, feature_list, df_housePrice_train['price'])
+features_test, output_test = get_numpy_data(df_housePrice_test, feature_list, df_housePrice_train['price'])
+features_valid, output_valid = get_numpy_data(df_housePrice_valid, feature_list, df_housePrice_train['price'])
 
 features_train, norms = normalize_features(features_train) # normalize training set features (columns)
 features_test = features_test / norms # normalize test set by training set norms
