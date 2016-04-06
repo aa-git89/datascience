@@ -6,15 +6,11 @@ dtype_dict = {'bathrooms':float, 'waterfront':int, 'sqft_above':int, 'sqft_livin
               'long':float, 'sqft_lot15':float, 'sqft_living':float, 'floors':float, 'condition':int, \
               'lat':float, 'date':str, 'sqft_basement':int, 'yr_built':int, 'id':str, 'sqft_lot':int, 'view':int}
 
-#df_housePrice_train = pd.read_csv("your_path/kc_house_data_small_train.csv", dtype = dtype_dict)
-#df_housePrice_test = pd.read_csv("your_path/kc_house_data_small_test.csv", dtype = dtype_dict)
-#df_housePrice_valid = pd.read_csv("your_path/kc_house_data_small_validation.csv", dtype = dtype_dict)
-#df_housePrice_full = pd.read_csv("your_path/kc_house_data_small.csv", dtype = dtype_dict)
+df_housePrice_train = pd.read_csv("your_path/kc_house_data_small_train.csv", dtype = dtype_dict)
+df_housePrice_test = pd.read_csv("your_path/kc_house_data_small_test.csv", dtype = dtype_dict)
+df_housePrice_valid = pd.read_csv("your_path/kc_house_data_small_validation.csv", dtype = dtype_dict)
+df_housePrice_full = pd.read_csv("your_path/kc_house_data_small.csv", dtype = dtype_dict)
 
-df_housePrice_train = pd.read_csv("C:/Amandeep/ML/Regression/kc_house_data_small_train.csv", dtype = dtype_dict)
-df_housePrice_test = pd.read_csv("C:/Amandeep/ML/Regression/kc_house_data_small_test.csv", dtype = dtype_dict)
-df_housePrice_valid = pd.read_csv("C:/Amandeep/ML/Regression/kc_house_data_small_validation.csv", dtype = dtype_dict)
-df_housePrice_full = pd.read_csv("C:/Amandeep/ML/Regression/kc_house_data_small.csv", dtype = dtype_dict)
 
 def get_numpy_data(data_frame, features, output):
     data_frame["constant"] = 1.0
