@@ -58,9 +58,8 @@ features_train, norms = normalize_features(features_train) # normalize training 
 features_test = features_test / norms # normalize test set by training set norms
 features_valid = features_valid / norms # normalize validation set by training set norms
 
-distances = []
-
 def compute_distances(features_instances, features_query):
+    distances = []
     diff = features_train[0:len(features_instances[:,1])] - features_query
     for i in range(0, len((features_train[:,1]))):
         distances.append(np.sqrt(np.sum(diff[i]**2)))
