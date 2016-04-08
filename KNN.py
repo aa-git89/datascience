@@ -78,11 +78,11 @@ def predict_output_of_query(k, feature_train, output_train, features_query):
         avg1 += output_train["price"][i] #if I comment this .. code works and prints correct weights
     return avg1/k
 
-
+k = 4
 pred_lst = []
-for i in range(0,10):
+for i in range(0,k):
     #print "run", i
-    pred_lst.append(predict_output_of_query(10.0, features_train, df_housePrice_train, features_test[i]))
+    pred_lst.append(predict_output_of_query(float(k), features_train, df_housePrice_train, features_test[i]))
 print pred_lst
 
 #print pred_lst
