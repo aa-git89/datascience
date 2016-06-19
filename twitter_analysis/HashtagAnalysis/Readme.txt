@@ -1,0 +1,2 @@
+SuperBowl16_TagAnalysis.pdf shows frequency of other hashtags used with #SuperBowl
+Superbowl16_Analysis shows mentions of different artists group by language. As english market/language is already something that is heavily researched. The analysis tapped tweets in Portuguese, Spanish and French language 
